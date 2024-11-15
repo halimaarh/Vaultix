@@ -1,0 +1,112 @@
+.wcv {
+    background-color: #f0f0f0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.context {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.context div {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative; /* Added */
+    cursor: pointer; /* Added */
+    height: 200px; /* Ensure uniform height */
+    overflow: hidden; /* Hide overflow when flipping */
+}
+
+.context div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.context h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #10ced6;
+    transition: transform 0.6s ease;
+}
+
+.context p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.context div.flipped h1 {
+    transform: translateY(-200%);
+}
+
+.context div.flipped p {
+    opacity: 1;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .context {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .context div {
+        margin-bottom: 20px;
+    }
+
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .context h1 {
+        font-size: 1.3rem;
+    }
+}

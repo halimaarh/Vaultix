@@ -1,0 +1,156 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    background: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color when scrolling */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mainlogo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainlogo h1 {
+    color: #10ced6;
+    font-size: 30px;
+}
+
+.mainlogo span {
+    color: #000;
+    font-size: 20px;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.navbarBtns .btn a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.loginBtn {
+    background: none;
+    border: 1px solid #000;
+}
+
+.loginBtn a {
+    color: #000;
+}
+
+.loginBtn:hover {
+    border: none;
+    background: #10ced6;
+}
+
+.loginBtn:hover a {
+    color: #fff;
+}
+
+.signupBtn {
+    background: #10ced6;
+}
+
+.signupBtn a {
+    color: #fff;
+}
+
+.signupBtn:hover {
+    background: none;
+    border: 1px solid #000;
+}
+
+.signupBtn:hover a {
+    color: #000;
+}
+
+/* Media query */
+@media screen and (max-width: 768px) {
+    .toggleNavbar {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .navBar {
+        display: none;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navBar.active {
+        display: flex;
+    }
+
+    .navbarBtns {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .closeNavbar {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        color: #000;
+        cursor: pointer;
+    }
+
+    .closeNavbar .icon {
+        font-size: 20px;
+    }
+
+    .closeNavbar:hover .icon {
+        color: #10ced6;
+    }
+}
+
+/* Hide icons in full-screen mode */
+@media screen and (min-width: 769px) {
+    .toggleNavbar,
+    .closeNavbar {
+        display: none;
+    }
+
+    .navBar {
+        display: flex;
+    }
+
+    .navbarBtns {
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,15 @@
+.buttonlabel{
+    width: 50%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #10ced6;
+}
+.buttonlabel:hover{
+    background: #10ced6;
+    color: #fff;
+}
+
+.buttoncontainer{
+    width: 100%;
+}

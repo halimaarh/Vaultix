@@ -1,0 +1,41 @@
+.inputcontent{
+    width: 400px;
+    height: 50px;
+    outline: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 10px;
+    border-bottom: 5px solid #10ced6;
+    margin-bottom: 20px;
+  }
+  .inputtext{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.2rem;
+  }
+  .iconcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  
+  }
+  .inputcontent .icon{
+    font-size: 25px;
+  }
+
+  .toggleIcon {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 40px;
+    right: 10px;
+    cursor: pointer;
+    color: #10ced6; 
+  }
+  
+  .toggleIcon:hover {
+    color: #000;
+  }

@@ -1,0 +1,153 @@
+.sidebar {
+  background-color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  grid-area: sidebar;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  z-index: 1000;
+  transform: translateX(0); /* Sidebar visible by default on larger screens */
+}
+
+/* Sidebar hidden by default on smaller screens */
+.sidebar.active {
+  transform: translateX(0); /* Sidebar visible when active */
+}
+
+/* Toggle icon styles */
+.sidebar-toggle {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed to avoid overlapping */
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: #10ced6;
+  cursor: pointer;
+  z-index: 1100;
+  transition: left 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Adjust toggle position when sidebar is active */
+.sidebar.active ~ .sidebar-toggle {
+  left: 270px; /* Move toggle icon outside of the sidebar when active */
+}
+
+/* Sidebar header and user section styles */
+.sidebarheader {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+  background: transparent;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #10ced6;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-welcome p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.user-welcome h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #000;
+}
+
+/* Sidebar main section styles */
+.sidebarmain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.iconmain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px;
+}
+
+.sidebar-icon{
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.sidebarmain h1 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.sidebarmain a {
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebarmain a:hover {
+  background-color: #10ced6;
+  color: #000;
+}
+
+.sidebarmain a:hover .sidebar-icon,
+.sidebarmain a:hover h1 {
+  color: #000;
+}
+
+/* Quit button styles */
+#quit {
+  margin-top: auto;
+  border: 2px solid #10ced6;
+  border-radius: 5px;
+}
+
+#quit:hover {
+  background-color: #10ced6;
+  color: #000;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  /* Sidebar hidden by default */
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  /* Show toggle icon on small screens */
+  .sidebar-toggle {
+    display: block;
+  }
+
+  /* Adjust toggle position when sidebar is active */
+  .sidebar.active ~ .sidebar-toggle {
+    left: calc(100% + 20px); /* Move toggle icon just outside the sidebar width */
+  }
+}
+
+/* Hide toggle icon on larger screens */
+@media (min-width: 769px) {
+  .sidebar-toggle {
+    display: none; /* Hide toggle icon on larger screens */
+  }
+}

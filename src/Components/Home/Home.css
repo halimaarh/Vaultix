@@ -1,0 +1,140 @@
+.home {
+    min-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: background-image 1s ease-in-out;
+}
+
+.homeContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+.hometext {
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.homeBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid;
+    color: inherit; /* Inherit the color from the inline style */
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+.homeBtn a {
+    text-decoration: none;
+    color: inherit; /* Inherit the color from the parent */
+}
+
+.homeBtn:hover {
+    background: #000;
+    border: none;
+    color: #fff;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #10ced6;
+    animation: borderAnimation 2s infinite;
+}
+
+@keyframes borderAnimation {
+    0% { border-color: transparent; }
+    50% { border-color: #10ced6; }
+    100% { border-color: transparent; }
+}
+
+.popupContent {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.popupContent p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #10ced6;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subTitle {
+        font-size: 1rem;
+    }
+
+    .homeBtn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .homeContainer {
+        padding: 10px;
+    }
+
+    .popup {
+        width: 95%;
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    .popupContent p {
+        font-size: 0.9rem;
+    }
+}
